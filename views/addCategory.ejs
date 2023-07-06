@@ -1,0 +1,130 @@
+<%- include('header') %>
+    <div class="content">
+        <div class=" d-flex px-3 px-md-4">
+            
+            <div class=" col-12 mr-4 card mb-3 mb-md-4">
+                <div class="card-body">
+                    <!-- Breadcrumb -->
+                    <nav class="d-none d-md-block" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#">Category</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Create New User</li>
+                        </ol>
+                    </nav>
+                    <!-- End Breadcrumb -->
+
+                    <div class="mb-3 mb-md-4 d-flex justify-content-between">
+                        <div class="h3 mb-0">Create New User</div>
+                    </div>
+
+
+                    <!-- Form -->
+                    <div>
+                        <form method="post" action="/addCategoryData">
+                            <div class="form-row">
+                                <div class="form-group col-12 col-md-6">
+                                    <label for="name">Category Name</label>
+                                    <input type="text" class="form-control" value="" id="name" name="category"
+                                        placeholder="category name">
+                                </div>
+                            </div>
+                            <div class="custom-control custom-switch mb-2">
+                                <input type="checkbox" class="custom-control-input" id="randomPassword">
+                                <label class="custom-control-label" for="randomPassword">Set Random Password</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary float-right">Create</button>
+                        </form>
+                    </div>
+                    <!-- End Form -->
+                </div>
+            </div>
+            <div class="col-12 mr-4 card mb-3 mb-md-4 ">
+
+                <div class="card-body">
+                    <!-- Breadcrumb -->
+                    <nav class="d-none d-md-block" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#">Category</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Sub Create New User</li>
+                        </ol>
+                    </nav>
+                    <!-- End Breadcrumb -->
+
+                    <div class="mb-3 mb-md-4 d-flex justify-content-between">
+                        <div class="h3 mb-0">Sub Create New User</div>
+                    </div>
+
+
+                    <!-- Form -->
+                    <div>
+                        <form method="post" action="/add_sub_CategoryData">
+                            <div class="form-row">
+                                <div class="form-group col-12 col-md-6">
+                                    <label for="name">Category</label><br>
+                                    <select class="form-select p-2" aria-label="Default select example" name="categoryId">
+                                        <option>--- Category ---</option>
+                                        <% subData.map((val)=>{%>
+                                            <option value="<%= val.id %>"><%=val.category %></option>
+                                        <%})%>
+                                    </select>
+
+                                </div>
+                                <div class="form-group col-12 col-md-6">
+                                    <label for="name">Sub CategoryName</label>
+                                    <input type="text" class="form-control" name="subcategory"
+                                        placeholder="User Name">
+                                </div>
+                            </div>
+                            <div class="custom-control custom-switch mb-2">
+                                <input type="checkbox" class="custom-control-input" id="randomPassword">
+                                <label class="custom-control-label" for="randomPassword">Set Random Password</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary float-right">Create</button>
+                        </form>
+                    </div>
+                    <!-- End Form -->
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="small p-3 px-md-4 mt-auto">
+            <div class="row justify-content-between">
+                <div class="col-lg text-center text-lg-left mb-3 mb-lg-0">
+                    <ul class="list-dot list-inline mb-0">
+                        <li class="list-dot-item list-dot-item-not list-inline-item mr-lg-2"><a class="link-dark"
+                                href="#">FAQ</a></li>
+                        <li class="list-dot-item list-inline-item mr-lg-2"><a class="link-dark" href="#">Support</a>
+                        </li>
+                        <li class="list-dot-item list-inline-item mr-lg-2"><a class="link-dark" href="#">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg text-center mb-3 mb-lg-0">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item mx-2"><a class="link-muted" href="#"><i
+                                    class="gd-twitter-alt"></i></a></li>
+                        <li class="list-inline-item mx-2"><a class="link-muted" href="#"><i class="gd-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item mx-2"><a class="link-muted" href="#"><i class="gd-github"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg text-center text-lg-right">
+                    &copy; 2019 Graindashboard. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </div>
+
+    <%- include('footer') %>
